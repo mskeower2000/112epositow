@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: oksuop
+  name: okmauk
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: oksuop
+      app: okmauk
   template:
     metadata:
       labels:
-        app: oksuop
+        app: okmauk
     spec:
       containers:
-      - image: okteto.dev/oksuop:latest
-        name: oksuop
+      - image: okteto.dev/okmauk:latest
+        name: okmauk
         ports:
         - containerPort: 8080
         env:
-        - name: PORT
+        - name: 112epositow
           value: "8080"
         - name: ProxySite
           value: "mirror.umd.edu"
