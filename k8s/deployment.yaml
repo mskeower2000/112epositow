@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oksuop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oksuop
+  template:
+    metadata:
+      labels:
+        app: oksuop
+    spec:
+      containers:
+      - image: okteto.dev/oksuop:latest
+        name: oksuop
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: ProxySite
+          value: "mirror.umd.edu"
+        - name: Vless_UUID
+          value: "9090dad3-9492-4e7d-8386-cb11be89ce01"
+        - name: Vless_Path
+          value: "/9090dad3-9492-4e7d-8386-cb11be89ce01-vless"
+        - name: Vmess_UUID
+          value: "9090dad3-9492-4e7d-8386-cb11be89ce01"
+        - name: Vmess_Path
+          value: "/9090dad3-9492-4e7d-8386-cb11be89ce01-vmess"
+        - name: Share_Path
+          value: "/Share039"
