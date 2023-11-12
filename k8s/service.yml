@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: oksuop
+  name: okmauk
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
   type: ClusterIP  
   ports:
-  - name: "oksuop"
+  - name: "okmauk"
     port: 8080
   selector:
-    app: oksuop
+    app: okmauk
